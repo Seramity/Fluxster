@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+{$header}
+<title>{$title}</title>
+
+<meta name="description" content="Fluxster allows users to easily share and connect with people around the world.">
+<meta name="keywords" content="fluxster,social,network,share,follow">
+<meta name="robot" content="index,follow">
+<meta name="copyright" content="Fluxster All Rights Reserved">
+
+
+<link rel="shortcut icon" href="{$url}/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{$url}/images/icons/apple-touch-icon-114x114-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{$url}/images/icons/apple-touch-icon-72x72-precomposed.png" />
+<link rel="apple-touch-icon-precomposed" href="{$url}/images/icons/apple-touch-icon-57x57-precomposed.png" />
+<link rel="apple-touch-icon" href="{$url}/images/icons/apple-touch-icon.png" />
+<link href="{$url}/style.css" rel="stylesheet" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="{$url}/js/jquery.js"></script>
+<script type="text/javascript" src="{$url}/js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="{$url}/js/jquery.timeago.js"></script>
+<script type="text/javascript" src="{$url}/js/jquery.charcount.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function() {
+	$('#search').keypress(function(x){if(x.keyCode==13){q=$(this).val();if(q!=this.defaultValue){document.location='{$url}/index.php?a=search&u='+escape(q)}}});
+	$('#search').focus(function(){if($(this).val()==this.defaultValue)$(this).val('')});
+	$('#search').blur(function(){if($(this).val()=='')$(this).val(this.defaultValue)});
+	
+	$('#hashtag').keypress(function(x){if(x.keyCode==13){q=$(this).val();if(q!=this.defaultValue){document.location='{$url}/index.php?a=discover&u='+escape(q)}}});
+	$('#hashtag').focus(function(){if($(this).val()==this.defaultValue)$(this).val('')});
+	$('#hashtag').blur(function(){if($(this).val()=='')$(this).val(this.defaultValue)});
+	
+	$('.nord').tipsy({gravity:'n', fade:1, html: true, opacity: 1});
+	$('.sud').tipsy({gravity:'s', fade:1, html: true, opacity: 1, live: true});
+	$('.nord-est').tipsy({gravity:'ne', fade:1, html: true, opacity: 1});
+	$('.congInput [title]').tipsy({trigger: 'focus', gravity: 's'});
+	
+	$('.sidebar_title').click(function(){
+        $(this).siblings(".sidebar_list").toggle('400');
+	});
+	
+	$('.search_item').click(function() {
+    $(this).addClass('search_highlight').siblings().removeClass('search_highlight');
+    $("#search_o").val($(this).html());
+	});
+	
+	$('.search_item_home').click(function() {
+    $(this).addClass('search_item_highlight').siblings().removeClass('search_item_highlight');
+    $("#search_h").val($(this).html());
+	});
+	
+	$("#url").focus();
+	$("#url").click(function(){
+    // Select input field contents
+		$(this).select();
+	});
+	
+	// $('.filters').hide();
+	
+	if($(".notification-box").length) {
+	$(".notification-box").fadeIn("fast");
+	} 
+	
+	if($(".notification-bar").length) {
+	$('.notification-bar').slideDown('slow').delay(5000).slideUp('slow');
+	}
+	
+	
+	
+	$(".notification-close-info").click(function(){
+   		$(".notification-box-info").fadeOut("slow");return false;
+	});
+	 
+	$(".notification-close-success").click(function(){
+		$(".notification-box-success").fadeOut("slow");return false;
+	});
+	 
+	$(".notification-close-warning").click(function(){ 
+		$(".notification-box-warning").fadeOut("slow");return false;
+	});
+	 
+	$(".notification-close-error").click(function(){
+		$(".notification-box-error").fadeOut("slow");return false;
+	});
+	
+	jQuery("div.timeago").timeago();
+	
+	jQuery(".reply-container").hide();
+	$('.reply-button').live('click' , function(){
+		$(this).nextAll(".reply-container:first").slideToggle('500');
+	});
+	
+	jQuery(".videourl-container").hide();
+	$('.video-button').live('click' , function(){
+		$(this).next('.videourl-container').slideToggle('500');
+	});
+	
+	jQuery(".media-container").hide();
+	$('.media-button').live('click' , function(){
+		$(this).nextAll(".media-container:first").slideToggle('500');
+	});
+
+	$('.message-form').live('hover', function(){
+		if ($(this).data('hascharcount') == undefined) {
+			$(this).data('hascharcount', true).charCount({ allowed: {$msgLimit}, warning: 20 });
+		}
+	});
+	
+	$('body').live('mousemove', function() {
+		$('.popup-body').delay(300).fadeOut(2000);
+	});
+	$('.popup-body').live('click', function() {
+		$(this).delay(300).fadeOut(2000);
+	});
+	
+	$('body').live('mousemove', function() {
+		$('.popup-body-posted').delay(300).fadeOut(2000);
+	});
+	if ($.browser.msie && $.browser.version == 10) {
+	  $("#my_file").addClass("inputImageIe");
+	}
+	$("input[name='video']").keypress(function (evt) { // Disable the enter submit on the Video URL Input.
+		var charCode = evt.charCode || evt.keyCode;
+			if (charCode  == 13) { 
+			return false;
+		}
+	});
+
+});
+</script>
+<!--[if IE]>
+	<style type="text/css">
+	.inputImage { opacity: 0.5; margin-left: -240px !important; margin-top: 3px; }
+	img {border: o;}
+	</style>
+<![endif]-->
+
+
+</head>
+<body>		
+	{$cookieNotice}
+	{$topbar}
+	{$message}
+<div class="topbar_margin"></div>
+{$ad1}
+{$suspended}
+{$disabled}
+
+<div class="row">
+
+	{$content}
+	<div class="footer">
+		<div id="footer">
+ 			<p class="copyright">&#169; 2014 Fluxster</p>
+  			<ul class="nav">
+   				<li id="footer"><a href="{$url}/about">About</a></li>
+    				<li id="footer"><a href="http://fluxster.net/blog" target="_blank">Blog</a></li>
+    				<li id="footer"><a href="{$url}/contact">Contact</a></li>
+				<div id="mobile-footer">
+    				<li id="footer"><a href="{$url}/terms">Terms</a></li>
+    				<li id="footer"><a href="{$url}/privacy">Privacy</a></li>
+    				<li id="footer"><a href="{$url}/cookies">Cookies</a></li>
+   			 	<li id="footer"><a href="{$url}/safety">Safety</a></li>
+		</div>
+    		<li id="footer"><a href="{$url}/profile/fluxster">Fluxster</a></li>
+   		</ul>
+  	</div>
+	
+</div>	
+
+<script src="path/to/js/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	$(window).scroll(function() {
+		if($(this).scrollTop() != 0) {
+			$('#toTop').fadeIn();	
+		} else {
+			$('#toTop').fadeOut();
+		}
+	});
+ 
+	$('#toTop').click(function() {
+		$('body,html').animate({scrollTop:0},800);
+	});	
+});
+</script>		
+	</div>
+</div>
+</body>
+</html>

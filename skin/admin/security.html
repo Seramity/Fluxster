@@ -1,0 +1,19 @@
+<div class="twelve columns">
+<h3>Security Settings <span style="font-size: 12px;"><a href="{$url}/index.php?a=admin&logout=1">Log Out</a></span></h3>
+{$message}
+<div class="divider"></div>
+<div class="inner-page">{$adminMenu}</div>
+<div class="divider"></div>
+<div class="inner-page">
+<div class="addurlSmall">Change the password to your admin account</div><br />
+<form action="{$url}/index.php?a=admin&b=security" method="post">
+<div class="addurlAds">
+	<div class="input-container">Password</div> <input type="password" name="pwd" />
+</div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"></div><input type="submit" value="Change Password"/>
+</form>
+</div>
+</div>

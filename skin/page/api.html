@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="content">
+		<h3>API Documentation</h3>
+			<div class="sidebar">
+			Our API allows you to retrieve informations from our website via <strong>GET</strong> request and supports the following query parameters:
+			<br /><br />
+			<table border="1" width="100%">
+				<tr>
+					<td width="20%" valign="top">Name</td>
+					<td width="80%" valign="top">Description</td>
+				</tr>
+				<tr>
+					<td width="30%" valign="top"><strong><a href="#jump-city">city</a></strong></td>
+					<td width="70%" valign="top">This parameter queries a username in order to retrieve profile informations, and will return the following: <strong>username</strong> (the requested username), <strong>name</strong> (the full-name of the user), <strong>location</strong> (the user location), <strong>badges</strong> (the user's set badges, if they have one), <strong>bio</strong> (the user's biography), <strong>image</strong> (the user's profile image), <strong>followers</strong> (number of users that follows the username requested), and the <strong>following</strong> (number of users followed by the requested username) value.</td>
+				</tr>
+			</table>
+			<br />
+			<hr>
+			<div id="jump-city"><strong>URL parameter</strong></div><br />
+			Here is an example of a GET request on our API:
+			<br /><br />
+			<code><a href="{$url}/api.php?username=fluxster" target="_blank">{$url}/api.php?username=fluxster</a></code>
+			<br /><br />
+			This is the output that our API will return when you query for an <strong>url</strong>:
+			<pre>
+{
+   "apiVersion":"1.0",
+   "data":{
+      "username":"username",
+      "name":"Firstname Lastname",
+      "location":"Location",
+      "bio":"User's bio",
+      "image":"106579541.avatar_bw.png",
+      "followers":"x",
+      "following":"x"
+   }
+}
+			</pre>
+			An example of <strong>json</strong> decoding would be the following PHP code:
+			<br /><br />
+			<code>
+			&lt;?php<br />
+				header('Content-Type: text/plain; charset=utf-8;');
+				<br />
+				$file = file_get_contents("{$url}/api.php?username=fluxster);<br />
+				print_r(json_decode($file));<br />
+			?&gt;
+			</code>
+			<hr>
+			<br /><br />
+			If you have any questions feel free to <strong><a href="{$url}/contact">contact us</a></strong>.
+		</div>
+	</div>
+</div>

@@ -1,0 +1,60 @@
+{$sidebar}
+<div class="eight columns">
+<div class="meTitle">
+<h3>General Settings</h3>
+</div>
+
+<div class="inner-page">
+	<h7>Basic Infomation</h7>
+	<br />
+	<br />
+<form action="{$url}/index.php?a=settings" method="post">
+	<div class="addurlAds">
+		<div class="input-container">Name</div> <input type="text" name="name" value="{$currentName}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Email</div> <input type="text" name="email" value="{$currentEmail}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Location</div> <input type="text" name="location" value="{$currentLocation}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+	<div class="input-container">Gender</div>
+		<select name="gender">
+			<option value="0" {$none}></option>
+			<option value="1" {$male}>Male</option>
+			<option value="2" {$female}>Female</option>
+		</select>
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Website<br /><span style="color: #666; font-size: 10px;">inlcude http://</span></div> <input type="text" name="ws" value="{$currentWs}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Facebook<br /><span style="color: #666; font-size: 10px;">profile link</span></div> <input type="text" name="facebook" value="{$currentFacebook}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Twitter<br /><span style="color: #666; font-size: 10px;">twitter link</span></div> <input type="text" name="twitter" value="{$currentTwitter}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Youtube<br /><span style="color: #666; font-size: 10px;">channel</span></div> <input type="text" name="youtube" value="{$currentYoutube}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Bio<br /><span style="color: #666; font-size: 10px;">260 characters or less</span></div>
+		<textarea class="ads" name="bio" rows="5" cols="50">{$currentBio}</textarea>
+	</div>
+
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"></div><input type="submit" name="general" value="Save Changes"/>
+</div>
+</form>
+</div>

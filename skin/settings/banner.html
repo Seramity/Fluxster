@@ -1,0 +1,46 @@
+<h3>Banner Settings</h3>
+{$message}
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="settings-image">{$image}</div>
+	<div class="settings-name"><div style="text-transform:capitalize; display: inline-block;">{$username}</div></div>
+	<div class="settings-change"><a href="{$url}/index.php?a=settings">Profile Settings</a><br />
+	<a href="{$url}/index.php?a=settings&b=avatar">Change Profile Picture</a><br />
+	<a href="{$url}/index.php?a=settings&b=security">Change Password</a><br />
+	<a href="{$url}/index.php?a=settings&b=delete"><font color="#b64949">Delete Your Account</font></a></div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+Reccommended size: 100px x 100px to 500px x 500px 
+<br />
+Fluxster uses Gravatar by default. You can add a profile picture here, or you can add a picture on <a href="http://gravatar.com/">Gravatar</a> 
+<br />(If your email on Fluxster matches with your Gravatar email.)
+
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="uploadForm">
+			<form id="upload" class="uploadForm" action="{$url}/index.php?a=settings&b=avatar" method="POST" enctype="multipart/form-data">
+
+			<input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="{$max_file_upload}" />
+
+			<div>
+				<input type="file" id="fileselect" name="fileselect[]" />
+				<br />
+				Max File Size: 1MB
+			</div>
+
+			
+		</div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"><span style="color: #666; font-size: 10px;">upload image as new profile picture</span></div>
+		<input type="submit" value="Save Image" />
+	</form>
+	<form action="{$url}/index.php?a=settings&b=avatar" method="POST">
+	<div class="input-container"><span style="color: #666; font-size: 10px;">delete image and make default</span></div>
+		<input type='hidden' name="deleteimg" />
+		<input type="submit" value="Delete Image" />
+	</form>
+</div>

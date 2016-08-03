@@ -1,0 +1,35 @@
+<form id="imageForm" name="form" action="{$url}/requests/post_me.php" method="POST" enctype="multipart/form-data" >
+<div class="message">
+	<div class="message-picture">
+		{$image}
+	</div>
+	<div class="message-bottom-container-top">
+		{$delReply}
+		<div class="reply-top-container">
+			<div class="reply-container-form"><textarea id="post9999999999" class="message-form" placeholder="Want to reply to this user? Add @{$currentUser}" name="postmsg" >@{$currentUser} </textarea></div>
+			<div type="button" name="action" class="post-button-wi" value="Post" id="9999999999" onclick="startUpload()">Reply</div>
+			<div class="button-image">
+				<input name="my_image" id="my_file" size="27" type="file" class="inputImage"/>
+			</div>
+			<div class="video-button"></div><div class="videourl-container"><input type="text" name="video" placeholder="Paste YouTube or Vimeo link here" /></div>
+			<div class="post-loader" id="post-loader9999999999" style="visibility: hidden"><img src="{$url}/images/preloader.gif" /></div>
+		</div>
+	</div>
+</div>
+<iframe id="my_iframe" name="my_iframe" src="" style="display: none"></iframe>
+</form>
+<script type="text/javascript">
+function startUpload() {
+		document.getElementById("imageForm").target = "my_iframe"; //'my_iframe' is the name of the iframe
+		document.getElementById("imageForm").submit();
+	    document.getElementById("post-loader9999999999").style.visibility = "visible";
+	
+}
+function stopUpload(success){      
+      document.getElementById("post-loader9999999999").style.visibility = "hidden";
+      document.getElementById("new-post").innerHTML = success + document.getElementById("new-post").innerHTML;
+	  document.getElementById("imageForm").reset();
+	  jQuery("div.timeago").timeago();
+      return true;   
+}	
+</script>

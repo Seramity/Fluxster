@@ -1,0 +1,37 @@
+<div class="meTitle" style="padding: 10px;">
+	<h4>Get started for free!</h4>
+</div>
+{$message}
+
+<div class="sidebar">
+	<form action="{$url}/index.php?a=register" method="post" autocomplete="off">
+	
+	<h7>Email</h7><br />
+	    	<input type="text" name="regEmail" placeholder="Enter your email"/><br />
+	<br />
+	
+	<h7>Username</h7> &nbsp;<div style="font-size: 11px; color: #999; display:inline;">
+	
+	
+	3-16 characters
+	
+	
+	</div>
+	
+	
+	
+		<input type="text" name="regName" placeholder="Enter a username"/><br /><br />
+		
+	<h7>Password</h7> <div style="font-size: 11px; color: #999; display:inline;">6-32 characters</div>
+		<input type="password" name="regPass" placeholder="Enter a password"/><br />		
+		
+		{$captcha}
+		<br />
+	
+	<input type="submit" value="Create Account" name="register"/>
+	
+	<br />
+	<br />
+	By clicking "Create Account" you agree with our <a href="{$url}/terms" target="_blank"><font color="#67a59b">Terms of Service</font></a>.
+</div>
+</form>

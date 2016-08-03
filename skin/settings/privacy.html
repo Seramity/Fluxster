@@ -1,0 +1,58 @@
+{$sidebar}
+<div class="eight columns">
+<div class="meTitle">
+<h3>Privacy Settings</h3>
+</div>
+
+<form action="{$url}/index.php?a=settings&b=privacy" method="post">
+<div class="inner-page">
+	<div class="addurlSmall">Change your privacy settings to ensure you feel safe and comfortable.</div><br />
+	
+	<table class="settings-table">
+		<tbody>
+			
+			
+			<tr>
+				<td class="settings-table_title"><strong>Hide my information</strong></td>
+				<td class="settings-table_option"><input type="checkbox" name="hideInfo" value="1" {$hideInfoChecked}></td>
+				<td>Only users who are following you can view your information on your profile (bio, location, etc.)</td>
+			</tr>
+			
+			<tr>
+				<td class="settings-table_title"><strong>Hide my email</strong></td>
+				<td><input type="checkbox" name="hideEmail" value="1" {$hideEmailChecked}></td>
+				<td>Hide you email on your profile</td>
+			</tr>
+			
+			<tr>
+				<td class="settings-table_title"><strong>Hide my posts</strong></td>
+				<td><input type="checkbox" name="hidePosts" value="1" {$hidePostsChecked}></td>
+				<td>Only users who are following you can view your posts</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+	<div class="divider" style="margin: 0 0 25px; 0"></div>
+
+<div class="inner-page">
+	<table class="settings-table">
+		<tbody>	
+			
+			<tr>
+				<td class="settings-table_title"><strong>Search Results</strong></td>
+				<td class="settings-table_option"><input type="checkbox" name="searchResults" value="1" {$searchResultsChecked}></td>
+				<td>Disables you from showing up on search results</td>
+			</tr>
+			
+			
+		</tbody>
+	</table>
+	
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"></div><input type="submit" name="privacy" value="Change settings"/>
+	</form>
+	</div>
+</div>

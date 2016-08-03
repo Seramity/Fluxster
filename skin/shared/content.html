@@ -1,0 +1,26 @@
+<div class="sidebar_c">
+	<div class="logo_search">
+		<a href="{$url}"><img src="{$url}/images/logo_search.png" /></a>
+	</div>
+	<div class="sidebar">
+		{$sidebar}
+	</div>
+</div>
+<div class="results_c">
+	<div class="search_c">
+		<a href="{$url}/?a=web&q={$query}"><div class="search_item">web</div></a>
+		<a href="{$url}/?a=images&q={$query}"><div class="search_item">images</div></a>
+		<a href="{$url}/?a=videos&q={$query}"><div class="search_item">videos</div></a>
+		<a href="{$url}/?a=news&q={$query}"><div class="search_item">news</div></a>
+	</div>
+	<form action="" method="get" class="search_form">
+		<input type="hidden" name="a" value="{$search}" id="search_o" />
+		<input type="text" name="q" value="{$query}" size="64" class="search_box" />
+		<input type="submit" value="" class="search_btn" />
+	</form>
+	<div class="resNum">{$resNumber}</div>
+	<div class="{$results}">
+	{$rows}
+	</div>
+	<div class="pagination">{$pagination}</div>
+</div>

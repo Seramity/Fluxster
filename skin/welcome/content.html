@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style type="text/css">
+body {
+	background: url() no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.footer {
+	display: none;
+}
+
+.topbar {
+	display: none;
+}
+</style>
+
+<link href="{$url}/skin/welcome/style.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+
+<body>
+
+
+
+<script type="text/javascript">
+
+document.body.style.backgroundImage = 'url(' + [
+			'{$url}/loginbg/bg1.jpg',
+			'{$url}/loginbg/bg2.jpg',
+			'{$url}/loginbg/bg3.jpg',
+			'{$url}/loginbg/bg4.jpg',
+			'{$url}/loginbg/bg5.jpg',
+			'{$url}/loginbg/bg6.jpg',
+			'{$url}/loginbg/bg7.jpg',
+			'{$url}/loginbg/bg8.jpg',
+			'{$url}/loginbg/bg9.jpg',
+			'{$url}/loginbg/bg10.jpg',
+			'{$url}/loginbg/bg11.jpg',
+			'{$url}/loginbg/bg12.jpg',
+			'{$url}/loginbg/bg13.jpg',
+			'{$url}/loginbg/bg14.jpg',
+			'{$url}/loginbg/bg15.jpg',
+			'{$url}/loginbg/bg16.jpg',
+			'{$url}/loginbg/bg17.jpg',
+			'{$url}/loginbg/bg18.jpg',
+			'{$url}/loginbg/bg19.jpg',
+			'{$url}/loginbg/bg20.jpg',
+			'{$url}/loginbg/bg21.jpg',
+			'{$url}/loginbg/bg22.jpg',
+			'{$url}/loginbg/bg24.jpg',
+			'{$url}/loginbg/bg25.jpg',
+			'{$url}/loginbg/bg26.jpg',
+			'{$url}/loginbg/bg27.jpg',
+			'{$url}/loginbg/bg28.jpg'
+		][Math.floor(Math.random() * 27)] + ')';
+
+;
+
+
+</script>
+
+
+
+
+
+<center><h1><img src="{$url}/images/welcome-logo.png" class="welcome-logo"/></h1>
+<h3>An easier way to
+<script language="JavaScript">
+
+var r_text = new Array ();
+r_text[0] = "connect";
+r_text[1] = "chat";
+r_text[2] = "make friends";
+r_text[3] = "follow";
+r_text[4] = "share";
+r_text[5] = "be followed";
+var i = Math.floor(6*Math.random())
+
+document.write(r_text[i]);
+
+
+</script>
+
+
+
+</h3></center>
+
+
+
+<form action="{$url}/index.php?a=welcome" method="post">
+
+	<h2>Log In</h2>
+	
+
+	
+	<input type="text" name="username" class="text-field" placeholder="Username"/>
+	<input type="password" name="password" class="text-field" placeholder="Password"/>
+	<br />
+	<br />
+	<a href="{$url}/recover">Forgot Password</a>
+	
+   	<input type="submit" value="Log In" class="button" name="login"/>
+   	<br />
+   	<br />
+   	Don't have an account? <a href="{$url}/register">Register Here</a>
+    
+
+</form>
+
+</body>
+</html>

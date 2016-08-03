@@ -1,0 +1,31 @@
+{$sidebar}
+<div class="eight columns">
+<div class="meTitle">
+<h3>Change Password</h3>
+</div>
+
+<form action="{$url}/index.php?a=settings&b=security" method="post">
+<div class="inner-page">
+	<div class="addurlSmall">Change the password to your account</div><br />
+	
+	<div class="addurlAds">
+		<div class="input-container">Current Password</div> <input type="password" name="current" /> 
+	</div>
+	<br />
+	<div class="divider"></div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">New Password</div> <input type="password" name="pwd" /> 
+	</div>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Retype</div> <input type="password" name="pwd2" /> 
+	</div>
+	
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"></div><input type="submit" name="password" value="Change Password"/>
+	</form>
+	</div>
+</div>

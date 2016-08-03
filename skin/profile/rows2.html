@@ -1,0 +1,30 @@
+<div class="message">
+	<div class="message-picture">
+		<a href="{$url}/profile/{$username}">{$image}</a>
+	</div>
+	<div class="message-top-container">
+		<div class="message-top">
+			<div class="message-author">
+				<a href="{$url}/profile/{$username}">{$username}</a>
+			</div>
+			<a href="{$url}/index.php?a=message&m={$id}">
+				<div class="timeago{$b}" title="{$time}">
+					{$time}
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="message-container">
+		<div class="message-message">
+			{$message}
+		</div>
+	</div>
+	<div class="message-bottom-container">
+		{$mediaButton}
+
+		<div class="media-container">
+			{$video}
+			{$media}
+		</div>
+	</div>
+</div>

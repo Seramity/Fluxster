@@ -1,0 +1,163 @@
+body {
+	
+}
+
+h1 {
+	font-size: 38px;
+	color: #fff;
+	text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+	
+}
+
+h2 {
+	color: #fff;
+	text-shadow: 0px 0px 6px #252525;
+}
+
+h3 {
+	font-size: 28px;
+	color: #fff;
+	text-shadow: 0px 0px 6px #252525;
+	font-weight: 400;
+}
+
+a {
+	color: #adb333;
+}
+/* NAVIGATION */
+
+nav {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}
+
+nav a {
+	color: #4889C2;
+	font-weight: bold;
+	text-decoration: none;
+	opacity: .3;
+	-moz-transition: all .4s;
+}
+
+nav a:hover {
+	opacity: 1;
+}
+
+nav a.focus {
+	opacity: 1;
+}
+
+/* LOGIN & REGISTER FORM */
+
+form {
+	width: 280px;
+	height: 280px;
+	margin: 20px auto;
+	background: rgba(37,37,37,0.5);
+	border-radius: 3px;
+	box-shadow: 0 0 10px rgba(0,0,0, .4); 
+	text-align: center;
+	padding-top: 1px;
+	color: white;
+	-webkit-text-fill-color: white;
+	text-shadow: 0px 0px 6px rgba(0,0,0,1);
+
+   
+}
+
+form a {
+	color: #adb333;
+}
+
+form a:hover {
+	color: #adb333;
+}
+
+form.register{																				
+	height: 350px;
+}
+
+form .text-field {																			
+	border: 0px;
+	width: 230px;
+	height: 40px;
+	border-radius: 3px;
+	margin-top: 10px;
+	padding-left: 10px;
+	color: #fff;
+	background: transparent;
+	box-shadow: 0 0 10px rgba(0,0,0, .5); 
+	outline: none;
+}
+
+form .text-field:focus {
+	box-shadow: 0 0 10px rgba(0,0,0, .4); 
+	color: #fff;
+	background: rgba(0, 0, 0, 0.2);
+	transition: background .25s ease-in-out;
+  	-moz-transition: background .25s ease-in-out;
+  	-webkit-transition: background .25s ease-in-out;
+}
+
+form .button {																				
+	border-radius: 3px;
+	border: 1px solid #9ba02d;
+	box-shadow: inset 0 1px 0 #bdc343;
+	width: 242px;
+	height: 40px;
+	margin-top: 15px;
+	
+	background: linear-gradient(bottom, #adb333 0%, #bdc343 100%);
+	background: -o-linear-gradient(bottom, #adb333 0%, #bdc343 100%);
+	background: -moz-linear-gradient(bottom, #adb333 0%, #bdc343 100%);
+	background: -webkit-linear-gradient(bottom, #adb333 0%, #bdc343 100%);
+	background: -ms-linear-gradient(bottom, #adb333 0%, #bdc343 100%);
+	
+	cursor: pointer;
+	color: white;
+	font-weight: bold;
+	text-shadow: 0 -1px 0 #9ba02d;
+	font-size: 13px;
+}
+
+form .button:hover {
+	background: linear-gradient(bottom, #b3bb4e 0%, #c6ce5b 100%);
+	background: -o-linear-gradient(bottom, #b3bb4e 0%, #c6ce5b 100%);
+	background: -moz-linear-gradient(bottom, #b3bb4e 0%, #c6ce5b 100%);
+	background: -webkit-linear-gradient(bottom, #b3bb4e 0%, #c6ce5b 100%);
+	background: -ms-linear-gradient(bottom, #b3bb4e 0%, #c6ce5b 100%);
+}
+
+form .button:active {
+	background: linear-gradient(bottom, #bdc343 0%, #adb333 100%);
+	background: -o-linear-gradient(bottom, #bdc343 0%, #adb333 100%);
+	background: -moz-linear-gradient(bottom, #bdc343 0%, #adb333 100%);
+	background: -webkit-linear-gradient(bottom, #bdc343 0%, #adb333 100%);
+	background: -ms-linear-gradient(bottom, #bdc343 0%, #adb333 100%);
+	
+	box-shadow: inset 0 0 2px rgba(0,0,0, .3), 0 1px 0 white;
+}
+
+ul.right {
+	margin-right: -540px;
+	
+}
+
+ul.left {
+margin-t: -540px;
+}
+
+
+.welcome-logo {
+width: 100%; 
+height: 100%;
+max-width: 382px;
+max-height: 75px;
+}
+
+.cookie-banner {
+background: rgba(37,37,37,0.5);
+}
+
+

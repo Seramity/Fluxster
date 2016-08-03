@@ -1,0 +1,33 @@
+<h3>General Settings</h3>
+{$message}
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="settings-image">{$image}</div>
+	<div class="settings-name">{$username}</div>
+	<div class="settings-change"><a href="{$url}/index.php?a=settings">Profile Settings</a><br /><a href="{$url}/index.php?a=settings&b=account">Account Settings</a><br /><a href="{$url}/index.php?a=settings&b=avatar">Change Profile Picture</a><br /><a href="{$url}/index.php?a=settings&b=security">Change Password</a></div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+
+	<div class="addurlAds">
+		<div class="input-container">Email</div> <input type="text" name="email" value="{$currentEmail}" />
+	</div>
+		<div class="input-container">Private<br /><span style="color: #666; font-size: 10px;">settings</span></div>
+	<select name="dropdown">
+		<option value="0" {$off}>Off</option>
+		<option value="1" {$on}>On (completely private)</option>
+		<option value="2" {$semi}>On (only followings allowed)</option>
+	</select>
+	<br />
+		<div class="input-container">Account<br /><span style="color: #666; font-size: 10px;">type</span></div>
+	<select name="dropdown">
+		<option value="0" {$personal}>Personal</option>
+		<option value="1" {$creator}>Creator</option>
+		<option value="2" {$business}>Business</option>
+	</select>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"></div><input type="submit" name="general" value="Save Changes"/>
+</div>
+</form>

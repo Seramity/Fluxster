@@ -1,0 +1,7 @@
+[02-Apr-2013 16:37:39] PHP Parse error:  syntax error, unexpected '}' in /home/fluxster/public_html/stuff/flux/requests/me.php on line 136
+[02-Apr-2013 16:38:46] PHP Parse error:  syntax error, unexpected '}' in /home/fluxster/public_html/stuff/flux/requests/me.php on line 136
+[02-Apr-2013 16:52:47] PHP Parse error:  syntax error, unexpected '}' in /home/fluxster/public_html/stuff/flux/requests/me.php on line 136
+[02-Apr-2013 16:53:10] PHP Parse error:  syntax error, unexpected T_ELSE in /home/fluxster/public_html/stuff/flux/requests/me.php on line 136
+[06-Jun-2013 22:59:38] PHP Parse error:  syntax error, unexpected T_STRING in /home/fluxster/public_html/stuff/flux/requests/me.php on line 42
+[06-Jun-2013 23:08:54] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/fluxster/public_html/stuff/flux/requests/me.php on line 59
+[05-Oct-2013 12:22:45] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home4/fluxster/public_html/requests/me.php on line 170

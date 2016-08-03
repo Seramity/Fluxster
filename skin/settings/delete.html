@@ -1,0 +1,58 @@
+{$sidebar}
+<div class="eight columns">
+<div class="meTitle">
+<h3>Delete or Disable Your Account</h3>
+</div>
+
+<div class="inner-page">
+<h7>Confirm your account deletion/disable</h7>
+<br />
+<font color="#b64949">
+When deleting your account, all your posts, account settings, and other infomation stored on Fluxster will be <strong>permanently</strong> deleted and will not be retrievable.
+</font>
+<br />
+<br />
+If you wish to delete your account for good, just fill in your account credentials to continue. When you type in the correct account infomation and you click "Delete", your account and its data will be deleted and you
+will be redirected to the welcome page.
+
+<br />
+<br />
+If you would like to disable your account, you can also do that instead of permanently deleting your account.
+<br />
+Disabling your account will hide all your post and your profile will be closed. 
+Everything will turn private. If you want to reactivate your account, there will be an option after you disable it.
+
+<br />
+<br />
+
+<!--Prevent pressing ENTER to deleting account--> 
+<script type="text/javascript"> 
+
+function stopRKey(evt) { 
+  var evt = (evt) ? evt : ((event) ? event : null); 
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+  if ((evt.keyCode == 13) && (node.type=="password"))  {return false;} 
+} 
+
+document.onkeypress = stopRKey; 
+
+</script>
+
+<form action="{$url}/index.php?a=settings&b=delete" method="post" autocomplete="off">
+	
+	<input type="text" name="username" placeholder="Account Username"/>
+	<br />
+	<input type="password" name="password" placeholder="Account password"/>
+	
+	<br />	
+	<br />	
+	
+	<input type="submit" value="Delete" name="delete"/> 
+	&nbsp; Or &nbsp;
+	<input type="submit" value="Disable" name="disable"/>
+	
+	
+</form>
+</div>
+</div>

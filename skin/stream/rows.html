@@ -1,0 +1,38 @@
+<div class="message">
+	<div class="message-picture">
+		{$image}
+	</div>
+	<div class="message-top-container"> 
+		<div class="message-top"> 
+			<div class="message-author">
+				{$profileLink}
+			</div>
+			<a href="{$url}/index.php?a=message&m={$id}">
+				<div class="timeago{$b}" title="{$time}">
+					{$time}
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="message-container">
+		<div class="message-message">
+			{$message}			
+		</div>
+	</div>
+	<div class="message-bottom-container">
+		{$reportButton}
+		{$conversation}
+		{$delReply}
+		{$mediaButton}
+		<div class="reply-container">
+			<div class="reply-container-form"><textarea id="post{$id}" class="message-form">@{$username} </textarea></div>
+			<div class="post-button" id="{$id}">Post</div>
+			<div class="post-loader" id="post-loader{$id}"></div>
+		</div>
+		<div class="media-container">
+			{$video}
+			{$media}
+			
+		</div>
+	</div>
+</div>

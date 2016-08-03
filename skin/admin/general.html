@@ -1,0 +1,131 @@
+<div class="twelve columns">
+<h3>General Settings <span style="font-size: 12px;"><a href="{$url}/index.php?a=admin&logout=1">Log Out</a></span></h3>
+{$message}
+<div class="divider"></div>
+<div class="inner-page">{$adminMenu}</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<form action="{$url}/index.php?a=admin" method="post">
+	<div class="addurlAds">
+		<div class="input-container">Title <span style="color: #666; font-size: 10px;">(Will change the whole stie title)</span></div> <input type="text" name="title" value="{$currentTitle}" />
+	</div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container">Captcha <span style="color: #666; font-size: 10px;">security check bullshit</span></div>
+	<select name="dropdown">
+		<option value="0" {$off}>Off</option>
+		<option value="1" {$on}>On</option>
+	</select>
+	<br />
+	<div class="addurlAds">
+		<div class="input-container">Public Key</div> <input type="text" name="public" value="{$currentPublic}" />
+	</div>
+	<div class="addurlAds">
+		<div class="input-container">Private Key</div> <input type="text" name="private" value="{$currentPrivate}" />
+	</div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<!--<div class="addurlAds">
+		Twitter: <input type="text" name="twitter" value="{$twitter}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		Facebook: <input type="text" name="facebook" value="{$facebook}" />
+	</div>
+	<br />
+	<div class="addurlAds">
+		Google+: <input type="text" name="gplus" value="{$gplus}" />
+	</div>
+	<br />-->
+	<div class="input-container">Timestamp <span style="color: #666; font-size: 10px;">time ago (1 hour ago) stuff</span></div>
+	<select name="time">
+		<option value="0" {$one}>Converted (live)</option>
+		<option value="1" {$two}>Unconverted (live)</option>
+		<option value="2" {$three}>Standard</option>
+		<option value="3" {$four}>Year-month-day</option>
+	</select>
+	<br />
+	<div class="input-container">Messages <br /><span style="color: #666; font-size: 10px;">per-page</span></div>
+	<select name="perpage">
+		<option value="10" {$ten}>10</option>
+		<option value="20" {$twenty}>20</option>
+		<option value="25" {$twentyfive}>25</option>
+		<option value="50" {$fifty}>50</option>
+	</select>
+	<br />
+	<div class="input-container">Messages <br /><span style="color: #666; font-size: 10px;">length</span></div>
+	<select name="message">
+		<option value="140" {$unu}>140</option>
+		<option value="160" {$doi}>160</option>
+		<option value="200" {$trei}>200</option>
+		<option value="350" {$patru}>350</option>
+	</select>
+	<br />
+	<div class="input-container">Mail Users <br /><span style="color: #666; font-size: 10px;">on registration</span></div>
+	<select name="mail">
+		<option value="0" {$mailoff}>Off</option>
+		<option value="1" {$mailon}>On</option>
+	</select>
+	<br />
+	<div class="input-container">Message Notification <br /><span style="color: #666; font-size: 10px;">time update interval</span></div>
+	<select name="interval">
+		<option value="10000" {$intone}>10 seconds</option>
+		<option value="30000" {$inttwo}>30 seconds</option>
+		<option value="60000" {$intthree}>1 minute</option>
+		<option value="120000" {$intfour}>2 minutes</option>
+		<option value="300000" {$intfive}>5 minutes</option>
+		<option value="600000" {$intsix}>10 minutes</option>
+		<option value="3600000" {$intseven}>1 hour</option>
+	</select>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container">Image<br /><span style="color: #666; font-size: 10px;">size (profiles)</span></div>
+		<select name="size">
+			<option value="1048576" {$onemb}>1MB</option>
+			<option value="2097152" {$twomb}>2MB</option>
+			<option value="3145728" {$threemb}>3MB</option>
+			<option value="10485760" {$tenmb}>10MB</option>
+		</select>
+		<br />
+		<div class="addurlAds">
+			<div class="input-container">Image<br /><span style="color: #666; font-size: 10px;">format (profiles)</span></div> <input type="text" name="format" value="{$currentFormat}" />
+		</div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container">Image<br /><span style="color: #666; font-size: 10px;">size (messages)</span></div>
+		<select name="sizeMsg">
+			<option value="1048576" {$onembMsg}>1MB</option>
+			<option value="2097152" {$twombMsg}>2MB</option>
+			<option value="3145728" {$threembMsg}>3MB</option>
+			<option value="10485760" {$tenmbMsg}>10MB</option>
+		</select>
+		<br />
+		<div class="addurlAds">
+			<div class="input-container">Image<br /><span style="color: #666; font-size: 10px;">format (messages)</span></div> <input type="text" name="formatMsg" value="{$currentFormatMsg}" />
+		</div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+		<div class="input-container">Censor <br /><span style="color: #666; font-size: 10px;"></span></div><input type="text" name="censor" value="{$currentCensor}" />
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="addurlAds">
+		<div class="input-container">Ad Unit <br /><span style="color: #666; font-size: 10px;">top page<br />html code</span></div>
+		<textarea class="ads" name="ads1">{$ad1}</textarea>
+	</div>
+	<div class="addurlAds">
+		<div class="input-container">Ad Unit <br /><span style="color: #666; font-size: 10px;">bottom page<br />html code</span></div>
+		<textarea class="ads" name="ads2">{$ad2}</textarea>
+	</div>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"></div><input type="submit" value="Save changes"/>
+	</form>
+</div>
+</div>

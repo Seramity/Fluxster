@@ -1,0 +1,24 @@
+<div class="message{$style}">
+	<div class="message-picture">
+		<a href="{$url}/profile/{$username}">{$image}</a>
+	</div>
+	<div class="message-top-container">
+		<div class="message-top">
+			<div class="message-author">
+				From: <a href="{$url}/profile/{$username}"><font color="#67a59b">{$username}</font></a>
+			</div>
+			<div class="timeago{$b}" title="{$time}">
+				{$time}
+			</div>
+		</div>
+	</div>
+	<div class="message-container">
+		<div class="message-message">
+			{$message}
+		</div>
+	</div>
+	<div class="message-bottom-container">
+		{$delete}
+		{$state}
+	</div>
+</div>

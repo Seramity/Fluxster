@@ -1,0 +1,23 @@
+<div class="weatherForecast">
+	<div class="seven columns">
+		<div class="six columns">
+			<div class="dayForecast">{$day}</div>
+			<div class="dateForecast">{$date}</div>
+		</div>
+		
+		<div class="six columns">
+			<div class="tempForecast">{$low} / {$high}</div><br />
+		</div>
+	</div>
+	
+	<div class="three columns">
+		<div class="six columns">
+			<img src="{$icon}" height="45" width="55" />
+		</div>
+			
+		<div class="six columns">
+			<div class="precipForecast"><img src="{$url}/images/dropblack.png" /> {$precip}</div>
+			<div class="condForecast">{$condition}</div>
+		</div>
+	</div>
+</div>

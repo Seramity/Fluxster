@@ -1,0 +1,61 @@
+{$sidebar}
+<div class="eight columns">
+<div class="meTitle">
+<h3>Design Settings</h3>
+</div>
+
+<div class="inner-page">
+
+	<div class="addurlSmall">Change the looks of your profile to your likings.</div><br />
+	
+	<form action="{$url}/index.php?a=settings&b=design" method="post">
+
+	<div class="addurlAds">
+		<div class="input-container">Background <br /><span style="color: #666; font-size: 10px;">url</span></div> 
+		<input type="text" name="background" value="{$currentBackground}" />
+	</div>
+	<br />
+	<strong>Background Settings</strong>
+	<br />
+	<br />
+	<table class="settings-table">
+		<tbody>
+			
+			
+			<tr>
+				<td class="settings-table_title"><strong>Fixed</strong></td>
+				<td class="settings-table_option"><input type="checkbox" name="fixedBG" value="1" {$fixedBGChecked}></td>
+				<td>Fixed makes your background stay stationary as you scroll up and down the page.</td>
+			</tr>
+			
+			<tr>
+				<td class="settings-table_title"><strong>Repeat</strong></td>
+				<td><input type="checkbox" name="repeatBG" value="1" {$repeatBGChecked}></td>
+				<td>Repeats your background</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="addurlAds">
+		<div class="input-container">Banner <br /><span style="color: #666; font-size: 10px;">url</span></div> 
+		<input type="text" name="banner" value="{$currentBanner}" />
+		<p>Default/recommended size: 900px x 170px</p>
+	</div>
+	<br />
+		<div class="input-container">Enable<br /><span style="color: #666; font-size: 10px;">badges</span></div> 
+	<select name="badges">
+		<option value="0" {$display}>Display badges</option>
+		<option value="1" {$hide}>Do not display badges</option>
+	</select>
+		<p>Display your badges on your profile</p>
+		
+</div>
+
+<div class="divider"></div>
+<div class="inner-page">
+	<div class="input-container"></div><input type="submit" name="design" value="Save Changes"/>
+</div>
+</form>
+</div>

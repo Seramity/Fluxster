@@ -1,0 +1,125 @@
+<style type="text/css">
+	
+	body {
+	background: {$background} {$repeatBG} {$centerBG} {$fixedBG};
+	{$coverBG}
+	}
+
+</style>
+<div class="content">
+{$profile}
+	<div class="eight-messages columns">
+		<script type="text/javascript">
+		$(function() {
+			interval = setInterval(function() {
+				$.ajax({
+					type: "POST",
+					url: "{$url}/requests/notification_mentions.php",
+					data: "lastid={$idx}&interval={$interval}", 
+					success: function(html) {
+						 // html is a string of all output of the server script.
+						$("#new-message").html(html);
+						if(html.length > 0) {
+							clearInterval(interval);
+						}
+				   }
+				});
+			}, {$interval});
+		});
+		</script>
+		<script type="text/javascript">
+		$(function() {
+			//More Button
+			$('.more').live("click",function() {
+				var ID = $(this).attr("id");
+				if(ID) {
+					$("#more"+ID).html('<img src="{$url}/images/preloader.gif" />');
+
+					$.ajax({
+						type: "POST",
+						url: "{$url}/requests/mentions.php",
+						data: "loadmore="+ ID, 
+						cache: false,
+						success: function(html) {
+							$("#loadmore").append(html);
+							$("#more"+ID).remove();
+							
+							// Reload the timeago plugin
+							jQuery("div.timeago").timeago();
+							
+							// Reload the reply button function (hide)
+							jQuery(".reply-container").hide();
+							jQuery(".media-container").hide();
+						}
+					});
+				}
+				return false;
+			});
+		});
+		</script>
+		
+		<script type="text/javascript">
+		$(function() {
+			//Post Button
+			$('.post-button').live("click",function() {
+				var ID = $(this).attr("id");
+				var text = $('textarea#post' + ID + '').val();
+				if(ID) {
+					$("#post-loader"+ID).html('<img src="{$url}/images/preloader.gif" />');
+
+					$.ajax({
+						type: "POST",
+						url: "{$url}/requests/post_mentions.php",
+						data: "postmsg="+ encodeURIComponent(text), 
+						cache: false,
+						success: function(html) {
+							$("#new-post").prepend(html);
+						    $("#post-loader"+ID).remove();
+							$("#post9999999999").val('');
+							// Reload the timeago plugin
+							jQuery("div.timeago").timeago();
+						}
+					});
+				}
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript">
+		$(function() {
+			//Report Button
+			$('.report-button').live("click",function() {
+				var ID = $(this).attr("id");
+				if(ID) {
+					$.ajax({
+						type: "POST",
+						url: "{$url}/requests/report.php",
+						data: "report="+ ID, 
+						cache: false,
+						success: function(html) {
+							$("#new-post").prepend(html);
+						}
+					});
+				}
+				return false;
+			});
+		});
+		</script>		
+		<div class="timeline" id="loadmore">
+		
+			<div class="eight-meTitle columns">
+			<div class="meTitle"><h3>Mentions</h3><div class="subMeTitle">see who is interacting with you</div></div>
+			</div>
+		
+			<div id="new-message"></div>
+			<div class="new-post" id="new-post"></div>
+			{$message}
+			{$rows}
+		</div>
+		<div id="more{$idn}" class="morebox" {$hide}>
+			<div class="more" id="{$idn}"><div class="more-button">More results</div></div>
+		</div>
+	</div>
+	
+</div>
+</div>

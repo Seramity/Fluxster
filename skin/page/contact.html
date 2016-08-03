@@ -1,0 +1,100 @@
+<div class="row">
+	<div class="content">
+	<!--SIDEBAR MENU-->
+		<div class="four columns">
+  			<div class="meTitle">
+   				 <h3>Contact us</h3>
+ 			 </div>
+		<div style="padding: 10px 20px;">
+			<h7>
+				<a href="http://fluxster.net/about">About</a>
+				<br>
+				<a href="http://fluxster.net/contact"><font color="#67a59b">Contact Us</font></a>
+				<br>
+				<a href="http://fluxster.net/brand">Brand</a>
+				<br>
+				<a href="http://fluxster.net/faqs">FAQs</a>
+				<br>
+				<a href="http://fluxster.net/terms">Terms of Service</a>
+				<br>
+				<a href="http://fluxster.net/privacy">Privacy Policy</a>
+				<br>
+				<a href="http://fluxster.net/cookies">Cookies</a>
+				<br>
+				<a href="http://fluxster.net/safety">Safety And Guidelines</a>
+				<br>
+			</h7>
+		</div>
+		</div>
+		
+		<!--PAGE CONTENT-->
+		<h3><img src="{$url}/images/flat_icons/book.png" width="28px" height="28px"/> Contact</h3>
+		<div class="sidebar">
+		
+		<strong>Contacting us</strong>
+		<br />
+		Need help, wanting to ask a question, or anything else? You can contact us, and we will be sure to respond to you within 24 hours.
+		<br />
+		Questions concerning anything else but Fluxster will not be responded to. And if we recieve spam, we will block your email address and you will lose the privilage to 
+		contact us.
+		<br />
+		<br />
+		
+		At this moment, we do not have a contact form. But you can send us a email at <a href="mailto:contact@fluxster.net"><font color="#67a59b">contact@fluxster.net</font></a><br />
+		<br />
+		<i>Please be patient, due to loads of email, we only have so much time to go through them and respond to them.</i>
+		
+		<br />
+		<br />
+		<?php
+			if (empty($_POST) == false) {
+				$errors = array();
+				
+				
+				$name 		= $_POST['name'];
+				$username       = $_POST['username'];
+				$email 		= $_POST['email'];
+				$message 	= $_POST['message'];
+				
+				if(empty($name) === true || empty($username) === true || empty($email) === true || empty($message) === true) {
+					$errors[] = 'Name, username, email, and a message is required.';
+				} else {
+					
+				}
+				
+				print_r($errors);
+			} 
+		?>
+	
+		<form action="" method="post">  
+			<p>
+				<label for="name"><div class="input-container"><strong>Full Name</strong></div></label>
+				<input type="text" name="name" id="name">
+			</p> 
+			<p>
+				<label for="username"><div class="input-container"><strong>Username</strong></div></label>
+				<input type="text" name="username" id="username">
+			</p>
+			<p>
+				<label for="email"><div class="input-container"><strong>Email</strong></div></label>
+				<input type="text" name="email" id="email">
+			</p>
+			<p>
+				<label for="message"><div class="input-container"><strong>Description</strong></div></label>
+				<textarea name="message" id="message" rows="5" cols="70"></textarea>
+			</p> 
+			<p>
+				<input type="submit" value="Sumbit">
+			</p>
+		</form>
+		<br />
+		<br />
+		<br />
+		<div class="divider"></div>
+		<br />
+		<center><img src="{$url}/images/fox_small.png "></center>
+		
+		
+		</div>
+	</div>
+</div>

@@ -1,0 +1,94 @@
+<style type="text/css">
+	
+	body {
+	background: {$background} {$repeatBG} {$centerBG} {$fixedBG};
+	{$coverBG}
+	}
+
+</style>
+<div class="content">
+{$profile}
+		<div class="eight-messages columns">
+		<script type="text/javascript">
+		$(document).ready(function() {
+			
+			$('.tabs button').click(function(){
+				switch_tabs($(this));
+			});
+		 
+			switch_tabs($('.defaulttab'));
+		 
+		});
+		function switch_tabs(obj)
+		{
+			$('.tab-content').hide();
+			$('.tabs button').removeClass("selected");
+			var id = obj.attr("rel");
+		 
+			$('#'+id).show();
+			obj.addClass("selected");
+		}
+		$(function() {
+			//Post Button
+			$('.post-button-wi').live("click",function() {
+				var ID = $(this).attr("id");
+				var text = $('textarea#post').val();
+				var to = $('input#to').val();
+				
+				$(".loader").html('<img src="{$url}/images/preloader.gif" />');
+
+				$.ajax({
+					type: "POST",
+					url: "{$url}/requests/post_messages.php",
+					data: "postmsg=" + encodeURIComponent(text) + "&to=" + encodeURIComponent(to),
+					cache: false,
+					success: function(html) {
+						$("#new-post").prepend(html);
+						$(".loader").remove();
+						$("#post").val('');
+						// Reload the timeago plugin
+						jQuery("div.timeago").timeago();
+					}
+				});
+				
+				return false;
+			});
+		});
+		$('.private-message').live('hover', function(){
+			if ($(this).data('hascharcount') == undefined) {
+				$(this).data('hascharcount', true).charCount({ allowed: 1000, warning: 20 });
+			}
+		});
+		</script>
+		<div class="timeline" id="loadmore">
+			
+			<div class="eight-meTitle columns">
+			<div class="meTitle"><h3>Messages</h3><div class="subMeTitle">Send a private message.</div></div>
+			</div>
+			
+			{$top}
+			<div id="new-message"></div>
+
+			<div id="wrapper">
+				<ul class="tabs">
+				<div class="li-container">
+					<button href="#" class="defaulttab" rel="tabs1">Inbox</button>
+					<button href="#" rel="tabs2">Sent</button>
+				</div>
+				</ul>
+				<div class="tab-content" id="tabs1">
+				{$from}
+				</div>
+				<div class="tab-content" id="tabs2">
+				{$sent}
+				</div>
+			</div>
+			
+		</div>
+		<div id="more{$idn}" class="morebox" {$hide}>
+			<div class="more" id="{$idn}"><div class="more-button">More results</div></div>
+		</div>
+	</div>
+	
+	</div>
+</div>

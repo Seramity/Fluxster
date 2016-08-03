@@ -1,0 +1,188 @@
+<link href="{$url}/profile.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+	
+	body {
+	background: {$background} {$repeatBG} {$centerBG} {$fixedBG};
+	{$coverBG}
+	}
+	
+	h4 {
+	font-size: 26px;
+	display: inline-block;
+	color: #999;
+	}
+	
+	.circular {
+	border: 5px;
+	width: 120px;
+	height: 120px;
+	max-height:120px;
+	max-width:120px;
+	border-radius: 150px;
+	background-image: url({$image});
+	background-size: 120px 120px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	border: 5px solid #eee;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	}
+	.p-banner {
+	width: 900px;
+	height: 170px;
+	background: url({$userBanner});
+	background-size: cover;
+	background-position: center center;
+	background-repeat:no-repeat;
+	box-shadow: 0px 1px 1px #CCC;
+	border: 1px solid #BFBFBF;
+	border-radius: 3px;
+	border-bottom: 45px solid #fff;
+	}
+
+	{$disableBadges}
+	
+	.followsYou {
+	display: inline-block;
+	font-weight: bold;
+	color: #777;
+	margin-left: 5px;
+	}
+	
+</style>
+<div class="content">
+	
+	<div class="row" style="margin: 0 0 10px 0;">
+	
+		<div class="p-banner">
+		
+		<div class="sidebar">
+		
+		<br />
+		
+		<div class="banner-image"><div class="circular"></div></div>
+		<div class="banner-profileTitle"> <div style="margin-top: -80px;">
+		<a href="{$url}/profile/{$username}">{$name}</a> {$followsYou}
+		
+		<div style="float: right; margin-top: -5px; margin-right: -20px;">
+		
+		{$editProfile} {$follow} {$loginNote}
+		</div>
+		<div class="profile_badges">
+		{$plusMember} {$newGuyBadge} {$newbieBadge} {$averageBadge} {$nobleBadge} {$dedicatedadge} {$betaTesterBadge} {$staffBadge} {$quietBadge} 
+		{$stalkerBadge} {$list50Messages} {$list50Followers} {$list50Following} {$list50All} {$list100All} {$list500All} {$yearBadge}
+		
+		</div>
+		<span class="mobile-social-links">{$facebook} {$twitter} {$youtube}</span></div></div>
+		
+		</div>
+		
+		
+		
+		<br />
+		
+		</div>
+		
+		</div>
+		
+		</div>
+		
+
+		
+	<div class="eight-messages columns-profile-main">
+		<script type="text/javascript">
+		$(function() {
+			//More Button
+			$('.more').live("click",function() {
+				var ID = $(this).attr("id");
+				if(ID) {
+					$("#more"+ID).html('<img src="{$url}/images/preloader.gif" />');
+
+					$.ajax({
+						type: "POST",
+						url: "{$url}/requests/profile{$public}.php",
+						data: "loadmore="+ ID + "&u={$userid}" + "{$followedvar}", 
+						cache: false,
+						success: function(html) {
+							$("#loadmore").append(html);
+							$("#more"+ID).remove();
+							
+							// Reload the timeago plugin
+							jQuery("div.timeago").timeago();
+							
+							// Reload the reply button function (hide)
+							jQuery(".reply-container").hide();
+							jQuery(".media-container").hide();
+						}
+					});
+				}
+				return false;
+			});
+		});
+		</script>
+		
+		<script type="text/javascript">
+		$(function() {
+			//Post Button
+			$('.post-button').live("click",function() {
+				var ID = $(this).attr("id");
+				var text = $('textarea#post' + ID + '').val();
+				if(ID) {
+					$("#post-loader"+ID).html('<img src="{$url}/images/preloader.gif" />');
+
+					$.ajax({
+						type: "POST",
+						url: "{$url}/requests/post_me.php",
+						data: "postmsg="+ encodeURIComponent(text), 
+						cache: false,
+						success: function(html) {
+							$("#new-post").prepend(html);
+						    $("#post-loader"+ID).remove();
+							
+							// Reload the timeago plugin
+							jQuery("div.timeago").timeago();
+						}
+					});
+				}
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript">
+		$(function() {
+			//Report Button
+			$('.report-button').live("click",function() {
+				var ID = $(this).attr("id");
+				if(ID) {
+					$.ajax({style="margin: 10px 0 0 0;"
+						type: "POST",
+						url: "{$url}/requests/report.php",
+						data: "report="+ ID, 
+						cache: false,
+						success: function(html) {
+							$("#new-post").prepend(html);
+						}
+					});
+				}
+				return false;
+			});
+		});
+		</script>
+		<div class="timeline" id="loadmore">
+
+			
+			{$error}
+			<div class="new-post" id="new-post"></div>
+			{$message}
+			{$rows}
+		</div>
+		<div id="more{$idn}" class="morebox" {$hide}>
+			<div class="more" id="{$idn}"><div class="more-button">More results</div></div>
+		</div>
+		
+	
+	</div>
+		{$profile}
+</div>

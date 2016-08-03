@@ -1,0 +1,41 @@
+<div class="content">
+{$profile}
+	<div class="eight columns">
+	
+		<div class="sidebar">
+			<h5>Hello, {$name}</h5>
+			<p>
+				You are here because you have deactivated your account.
+				<br />
+				Don't Worry, you can easily reactivate it if you want to. Just enter your account infomation below and press 
+				"Reactivate" to open your account.
+			</p> 
+
+			<br />
+			
+			<h5>Reactivate Account</h5>
+			<br />
+			<br />
+			{$message}
+			
+			<form action="{$url}/disabledaccount" method="post" autocomplete="off">
+	
+	<input type="text" name="username" placeholder="Account Username"/>
+	<br />
+	<input type="password" name="password" placeholder="Account password"/>
+	
+	<br />	
+	<br />	
+
+	<input type="submit" value="Reactivate" name="reactivate"/>
+	
+	
+</form>
+		</div>
+		
+	</div>
+	
+		
+		
+		
+</div>

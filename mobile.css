@@ -1,0 +1,40 @@
+@media only screen and (max-width : 640px) {
+	body {
+		color:#333;
+		font-family: Arial, sans-serif;
+		font-size:13px;
+		margin:0;
+		padding: 0;
+		background: #ececec;
+		background-repeat: repeat-x;
+		background-attachment:fixed;
+	}
+	
+	.content {
+		background: #fff;
+		overflow: auto;
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		overflow: hidden;
+		border: 0px;
+		-moz-border-radius:0px;
+		-webkit-border-radius:0px;
+		border-radius:0px;
+	}
+	
+	.footer {
+		background-color:#FFF;
+		width: 100%;
+		margin: 0 auto;
+		max-width: 900px;
+		height: 30px;
+		border: 0px;
+		-moz-border-radius:0px;
+		-webkit-border-radius:0px;
+		border-radius:0px;
+	}
+	
+}
+
+
+

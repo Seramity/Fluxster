@@ -1,0 +1,80 @@
+<div class="eight columns">
+		
+		
+		<div class="timeline" id="loadmore">
+	
+		<div class="meTitle"><h3>Create a bundle</h3></div>
+
+		</div>
+		
+		<br />
+		
+		{$message}
+				<form action="/index.php?a=bundle&b=create" method="post">
+	   	      	   		
+	   	      	   		<div class="addurlAds">
+						<div class="input-container">Name <br /><span style="color: #666; font-size: 10px;">50 character max</span></div> 
+						<input type="text" name="bundleName" />
+					</div>
+					
+	    				<br />
+	   				
+	   				<div class="addurlAds">
+						<div class="input-container">Description <br /><span style="color: #666; font-size: 10px;">260 characters max</span></div> 
+	   				<textarea class="ads" name="bundleBio" placeholder="(Optional)" rows="3" cols="30"></textarea><br /> 
+	   				</div>
+	   				
+	   				<br />
+	   				
+	   				<div class="addurlAds">
+						<div class="input-container">Category <br /></div>  
+						<select name="category">
+							<option value="blank"></option>	
+							<option value="1">Bussiness</option>
+							<option value="2">Brand/Product</option>
+							<option value="3">Community</option>
+							<option value="4">Fan Page</option>							
+							<option value="5">Other</option>
+							
+						</select>
+					</div>
+	   				
+	   				<br />
+	   					   				
+	   				<div class="addurlAds">
+												
+						<input type="radio" name="privacy" value="0"> 
+						<strong>Public</strong>: Your bundle will be available for anyone to see and join.  
+						
+						<br />
+						<br />
+						
+						<input type="radio" name="privacy" checked="" value="1"> 
+						<strong>Invite Only</strong>: Your bundle will be closed in terms of joining. People can see your bundle page but cannot join without an invitation.
+						<br />
+						<br />
+						
+						<input type="radio" name="privacy" value="2"> 
+						<strong>Private</strong>: Your bundle will be completely private to the public. No user can visit your bundle page or join it unless user is granted.
+						
+					</div>
+				<br /> 
+				
+					
+						<input type="submit" value="Create" name="create"/>
+					
+					<br />
+					By clicking "Create" you agree with our 
+					<a href="{$url}/bundleterms" target="_blank"><font color="#67a59b">Bundle Terms</font></a>
+					
+					
+					
+				</form>
+				
+	<br />		
+				
+
+	<br />	
+		
+		
+</div>

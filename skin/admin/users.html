@@ -1,0 +1,44 @@
+<div class="twelve columns">
+<h3>Manage Users <span style="font-size: 12px;"><a href="{$url}/index.php?a=admin&logout=1">Log Out</a></span></h3>
+{$message}
+<div class="divider"></div>
+<div class="inner-page">{$adminMenu}</div>
+	
+	
+<script type="text/javascript">
+	$(function() {
+		//More Button
+		$('.more-admin').live("click",function() {
+			var ID = $(this).attr("id");
+			if(ID) {
+				$("#more"+ID).html('<img src="images/preloader.gif" />');
+
+				$.ajax({
+					type: "POST",
+					url: "{$url}/requests/adm.php",
+					data: "lastmsg="+ ID, 
+					cache: false,
+					success: function(html){
+						$("div#updates").append(html);
+						$("#more"+ID).remove();
+					}
+				});
+			}
+		return false;
+		});
+	});
+</script>
+<div class="divider"></div>
+<div class="inner-page-list">
+	<div class="timeline" id="updates">
+	<div class="admin-rows"><div class="one columns">ID</div><div class="three columns">Username</div><div class="seven columns">Email</div><div class="one columns">Delete</div></div>
+		{$users}
+
+	</div>
+	<div id="more{$idn}" class="morebox-admin">
+		
+		<a href="#" class="more-admin" id="{$idn}">more</a>
+
+	</div>
+</div>
+</div>

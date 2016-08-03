@@ -1,0 +1,56 @@
+<div class="content">
+<div class="four columns">
+		<div class="meTitle">
+		<h3>Discover</h3>
+		<div class="subMeTitle">people you may or may not know</div>
+		</div>
+		
+		<div class="sidebar">{$random}</div>
+	</div>
+	<div class="eight-messages columns">
+		<script type="text/javascript">
+		$(function() {
+			//More Button
+			$('.more').live("click",function() {
+				var ID = $(this).attr("id");
+				if(ID) {
+					$("#more"+ID).html('<img src="{$url}/images/preloader.gif" />');
+
+					$.ajax({
+						type: "POST",
+						url: "{$url}/requests/search.php",
+						data: "loadmore="+ ID + "&u={$query}", 
+						cache: false,
+						success: function(html) {
+							$("#loadmore").append(html);
+							$("#more"+ID).remove();
+							
+							// Reload the timeago plugin
+							jQuery("div.timeago").timeago();
+							
+							// Reload the reply button function (hide)
+							jQuery(".reply-container").hide();
+						}
+					});
+				}
+				return false;
+			});
+		});
+		</script>
+		<div class="timeline" id="loadmore">
+			<div class="eight-meTitle columns">
+			<div class="meTitle"><h3>People</h3><div class="subMeTitle">{$people}</div></div>
+			</div>
+			
+			{$top}
+			{$error}
+			<div class="new-post" id="new-post"></div>
+			{$message}
+			{$rows}
+		</div>
+		<div id="more{$idn}" class="morebox" {$hide}>
+			<div class="more" id="{$idn}"><div class="more-button">More results</div></div>
+		</div>
+	</div>
+	
+</div>

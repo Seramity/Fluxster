@@ -1,0 +1,49 @@
+<div style="height: 100%; overflow: hidden;">
+<div class="four columns">
+	<div class="meTitle" style="font-weight: bold; padding: 10px;">
+		About {$edit}
+	</div>
+		<div class="sidebar-about">
+			<center><strong>You have your information set private to only your followers. 
+			<br /><a href="{$url}/index.php?a=settings&b=privacy">Click here</a> if you want to change it.</strong></center>
+		</div>
+		
+		<center>{$noInfo}</center>
+		
+		{$promotion}
+	
+		{$showEmail}
+	
+		{$location}
+		
+		{$gender}
+		
+		{$bio}
+		
+		{$website}
+		
+</div>
+
+<div class="four columns">
+	<div class="meTitle" style="font-weight: bold; padding: 10px;">
+		Social Stats
+	</div>
+	
+	<div class="sidebar-about">
+	<font color="#67a59b"><strong>Pixels</strong></font>: {$points}
+	</div>
+	
+	<div class="sidebar-about">
+	<strong>Messages</strong>: <a href="{$url}/profile/{$username}">{$messages}</a>
+	</div>
+	
+	<div class="sidebar-about">
+	<strong>Following</strong>: <a href="{$url}/profile/{$username}&f=following">{$following}</a>
+	</div>
+	
+	<div class="sidebar-about">
+	<strong>Followers</strong>: <a href="{$url}/profile/{$username}&f=followers">{$followers}</a>
+	</div>
+</div>
+<div class="four columns" style="display: none;"></div>
+</div>

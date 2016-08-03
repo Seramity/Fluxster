@@ -1,0 +1,25 @@
+<div class="message">
+	<div class="message-picture">
+		<a href="{$url}/profile/{$username}">{$image}</a>
+	</div>
+	<div class="message-top-container">
+		<div class="message-top">
+			<div class="message-author">
+				<a href="{$url}/profile/{$username}"><div style="text-transform:capitalize; display: inline;">{$username}</div></a> {$verified}
+			</div>
+			&nbsp; {$badges}
+			<div class="timeago{$b}" title="{$location}">
+				{$location}
+			</div>
+			</a>
+		</div>
+	</div>
+	<div class="message-container">
+		<div class="message-list">
+			<font color="#67a59b">{$name}</font>
+			<br />
+			{$bio}	
+			{$view}
+		</div>
+	</div>
+</div>
