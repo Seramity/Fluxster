@@ -16,7 +16,7 @@ For all Windows, Mac and Linux: [XAMPP](https://www.apachefriends.org/index.html
 2. Make a copy of Fluxster into your "www" folder
 3. Create a new database and import the "fluxster.sql" file
 4. Open /includes/config.php and all the $conf variables to your mySQL fields
-5. Open Fluxster in your browser (e.g http://localhost/fluxster)
+5. Open Fluxster in your browser (e.g. http://localhost/fluxster)
 6. Enjoy!
 
 ### Troubleshoot
@@ -30,5 +30,6 @@ If you have any problems with creating an account, posting, or changing user set
 
 ## Disclaimer
 DO NOT run Fluxster in production!
-Fluxster contains many security flaws and can put users in risk with the data that is stored.
+Fluxster contains many security flaws and bad practices that can put user's data that is stored at risk.
+For example: The login process is storing a user's username and MD5 hashed PASSWORD into cookies (Yikes!). Please mind this. This is an old project and was a huge learning experience for me.
 Of course you can run Fluxster on your own desktop environment, But I highly advise to not run it on a live server.
