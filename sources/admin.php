@@ -30,6 +30,17 @@ function PageMain() {
 		$result = mysql_fetch_row(mysql_query($query));
 
 
+	// Require user to be admin to access admin panel
+	/*
+	if(loginCheck($_COOKIE['username'], $_COOKIE['password'])) {
+				if ($result[28] == 0) {
+					header("Location: /");
+				}
+			} else {
+				header("Location: /");
+			}
+		*/
+
 	if(isset($_POST['login'])) { // Set cookies for Log-in.
 		header("Location: ".$confUrl."/index.php?a=admin&b=users");
 		$username = $_POST['username'];
