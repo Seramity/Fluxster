@@ -13,4 +13,5 @@ For Mac: [MAMP](https://www.mamp.info/en/)\
 For all Windows, Mac and Linux: [XAMPP](https://www.apachefriends.org/index.html)
 
 1. Install a desktop web environment that suits your needs. (If you are unsure how to do this there are many videos that clearly explain this process)
-2.
+2. Make a copy of Fluxster into your www folder
+3. 
