@@ -22,7 +22,7 @@ For all Windows, Mac and Linux: [XAMPP](https://www.apachefriends.org/index.html
 ### Troubleshoot
 If you have any problems with creating an account, posting, or changing user settings do the following:
 
-1. Open up phpMyAdmin (usually at localhost/phpmyadmin)
+1. Open up phpMyAdmin (usually at http://localhost/phpmyadmin)
 2. Open the "Variables" table
 3. Find "sql mode" and click "Edit"
 4. Remove "STRICT_ALL_TABLES"
