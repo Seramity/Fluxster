@@ -3,12 +3,12 @@ error_reporting(0);
 #error_reporting(E_ALL ^ E_NOTICE);
 
 $conf = $TMPL = array();
-$conf['host'] = 'localhost';
-$conf['user'] = 'root';
-$conf['pass'] = '';
-$conf['name'] = '';
-$conf['url'] = '';
-$conf['mail'] = '';
+$conf['host'] = 'localhost'; 				// Database host
+$conf['user'] = 'root'; 						// Database username ("root" is default for most environments)
+$conf['pass'] = ''; 								// Database password (no password is default for most environments)
+$conf['name'] = ''; 								// Database name
+$conf['url'] = ''; 									// URL for Fluxster (e.g http://localhost/fluxster)
+$conf['mail'] = ''; 								// Not required for local use
 
 $action = array(		'admin'			=> 'admin',
 				'register'		=> 'register',
