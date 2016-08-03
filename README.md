@@ -31,5 +31,7 @@ If you have any problems with creating an account, posting, or changing user set
 ## Disclaimer
 DO NOT run Fluxster in production!
 Fluxster contains many security flaws and bad practices that can put user's data that is stored at risk.
+
 For example: The login process is storing a user's username and MD5 hashed PASSWORD into cookies (Yikes!). Please mind this. This is an old project and was a huge learning experience for me.
+
 Of course you can run Fluxster on your own desktop environment, But I highly advise to not run it on a live server.
