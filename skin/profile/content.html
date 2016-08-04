@@ -1,18 +1,18 @@
 <link href="{$url}/profile.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
-	
+
 	body {
 	background: {$background} {$repeatBG} {$centerBG} {$fixedBG};
 	{$coverBG}
 	}
-	
+
 	h4 {
 	font-size: 26px;
 	display: inline-block;
 	color: #999;
 	}
-	
+
 	.circular {
 	border: 5px;
 	width: 120px;
@@ -20,7 +20,7 @@
 	max-height:120px;
 	max-width:120px;
 	border-radius: 150px;
-	background-image: url({$image});
+	background-image: url("{$image}");
 	background-size: 120px 120px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
@@ -43,54 +43,54 @@
 	}
 
 	{$disableBadges}
-	
+
 	.followsYou {
 	display: inline-block;
 	font-weight: bold;
 	color: #777;
 	margin-left: 5px;
 	}
-	
+
 </style>
 <div class="content">
-	
+
 	<div class="row" style="margin: 0 0 10px 0;">
-	
+
 		<div class="p-banner">
-		
+
 		<div class="sidebar">
-		
+
 		<br />
-		
+
 		<div class="banner-image"><div class="circular"></div></div>
 		<div class="banner-profileTitle"> <div style="margin-top: -80px;">
 		<a href="{$url}/profile/{$username}">{$name}</a> {$followsYou}
-		
+
 		<div style="float: right; margin-top: -5px; margin-right: -20px;">
-		
+
 		{$editProfile} {$follow} {$loginNote}
 		</div>
 		<div class="profile_badges">
-		{$plusMember} {$newGuyBadge} {$newbieBadge} {$averageBadge} {$nobleBadge} {$dedicatedadge} {$betaTesterBadge} {$staffBadge} {$quietBadge} 
+		{$plusMember} {$newGuyBadge} {$newbieBadge} {$averageBadge} {$nobleBadge} {$dedicatedadge} {$betaTesterBadge} {$staffBadge} {$quietBadge}
 		{$stalkerBadge} {$list50Messages} {$list50Followers} {$list50Following} {$list50All} {$list100All} {$list500All} {$yearBadge}
-		
+
 		</div>
 		<span class="mobile-social-links">{$facebook} {$twitter} {$youtube}</span></div></div>
-		
-		</div>
-		
-		
-		
-		<br />
-		
-		</div>
-		
-		</div>
-		
-		</div>
-		
 
-		
+		</div>
+
+
+
+		<br />
+
+		</div>
+
+		</div>
+
+		</div>
+
+
+
 	<div class="eight-messages columns-profile-main">
 		<script type="text/javascript">
 		$(function() {
@@ -103,15 +103,15 @@
 					$.ajax({
 						type: "POST",
 						url: "{$url}/requests/profile{$public}.php",
-						data: "loadmore="+ ID + "&u={$userid}" + "{$followedvar}", 
+						data: "loadmore="+ ID + "&u={$userid}" + "{$followedvar}",
 						cache: false,
 						success: function(html) {
 							$("#loadmore").append(html);
 							$("#more"+ID).remove();
-							
+
 							// Reload the timeago plugin
 							jQuery("div.timeago").timeago();
-							
+
 							// Reload the reply button function (hide)
 							jQuery(".reply-container").hide();
 							jQuery(".media-container").hide();
@@ -122,7 +122,7 @@
 			});
 		});
 		</script>
-		
+
 		<script type="text/javascript">
 		$(function() {
 			//Post Button
@@ -135,12 +135,12 @@
 					$.ajax({
 						type: "POST",
 						url: "{$url}/requests/post_me.php",
-						data: "postmsg="+ encodeURIComponent(text), 
+						data: "postmsg="+ encodeURIComponent(text),
 						cache: false,
 						success: function(html) {
 							$("#new-post").prepend(html);
 						    $("#post-loader"+ID).remove();
-							
+
 							// Reload the timeago plugin
 							jQuery("div.timeago").timeago();
 						}
@@ -159,7 +159,7 @@
 					$.ajax({style="margin: 10px 0 0 0;"
 						type: "POST",
 						url: "{$url}/requests/report.php",
-						data: "report="+ ID, 
+						data: "report="+ ID,
 						cache: false,
 						success: function(html) {
 							$("#new-post").prepend(html);
@@ -172,7 +172,7 @@
 		</script>
 		<div class="timeline" id="loadmore">
 
-			
+
 			{$error}
 			<div class="new-post" id="new-post"></div>
 			{$message}
@@ -181,8 +181,8 @@
 		<div id="more{$idn}" class="morebox" {$hide}>
 			<div class="more" id="{$idn}"><div class="more-button">More results</div></div>
 		</div>
-		
-	
+
+
 	</div>
 		{$profile}
 </div>
