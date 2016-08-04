@@ -4,7 +4,7 @@
 Fluxster is a small social networking website where people can join, share, and follow other people. (Similar to Twitter)
 People or businesses are able to use Fluxster to share content, follow users, and have their friends/customers keep up to date.
 
-Anyone may clone this repo and test Fluxster out on their own. You are allowed to use Fluxster for personal use ONLY (please read the disclaimer below). Feel free to play around with it and change anything to your liking. This is an abandoned project therefore I will not be updating it after the v1.4.2-beta release.
+Anyone may clone this repo and test Fluxster out on their own. You are allowed to use Fluxster for personal use ONLY (please read the disclaimer below). Feel free to play around with it and change anything to your liking. This is an abandoned project therefore I will not be updating it after the v1.4.2 release.
 
 ## Installation
 In order to test run Fluxster on your own, I recommend downloading a desktop web environment.
