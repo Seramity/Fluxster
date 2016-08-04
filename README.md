@@ -15,7 +15,7 @@ For all Windows, Mac and Linux: [XAMPP](https://www.apachefriends.org/index.html
 1. Install a desktop web environment that suits your needs. (If you are unsure how to do this there are many videos that clearly explain this process)
 2. Make a copy of Fluxster into your "www" folder
 3. Create a new database and import the "fluxster.sql" file
-4. Open /includes/config.php and all the $conf variables to your mySQL fields
+4. Open /includes/config.php and change all the $conf variables to your mySQL fields and url
 5. Open Fluxster in your browser (e.g. http://localhost/fluxster)
 6. Enjoy!
 
