@@ -18,23 +18,18 @@ $currentUrl = $_SERVER['PATH_INFO'];
 
 if(!isset($_COOKIE['cookie_notice'])) {
 	$TMPL['cookieNotice'] = '
-	<style type="text/css">
-		.topbar {
-		z-index: 0;
-		}
-	</style>
-	
+
 	<div class="cookie-banner">
 		 	<div class="container">
-		 		<p>Fluxster uses cookies to ensure the best experience possible. Fluxster stores user data and third party cookies. <a href="'.$confUrl.'/cookies"><font color="#adb333">Read More</font></a> 
+		 		<p>Fluxster uses cookies to ensure the best experience possible. Fluxster stores user data and third party cookies. <a href="'.$confUrl.'/cookies"><font color="#adb333">Read More</font></a>
 		 		<br />
 		 		In order to use this site, you will need to agree with our policy.</p>
 		 		<a href="'.$currentUrl.'/?cookie_notice" class="agree-button">Agree</a>
 		 	</div>
 		 </div>
-		<script src="'.$confUrl.'/js/cookies.js"></script>';	
-} 
-	
+		<script src="'.$confUrl.'/js/cookies.js"></script>';
+}
+
 if(isset($_GET['a']) && isset($action[$_GET['a']])) {
 	$page_name = $action[$_GET['a']];
 } else {
@@ -72,156 +67,156 @@ if($result[47] == 1) {
 
 if(isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
 	if(loginCheck($_COOKIE['username'], $_COOKIE['password'])) {
-	
+
 	$data = loginCheck($_COOKIE['username'], $_COOKIE['password']);
 	$getImg = (!empty($data['image'])) ? '<img src="'.$confUrl.'/uploads/avatars/'.$data['image'].'" width="80" height="80" />' : '<img src="http://www.gravatar.com/avatar/'.md5($data['mail']).'?s=80&d=mm" />';
 		$TMPL['userStatus'] =  'My Account';
 		$TMPL['topbar'] = '<div class="topbar"><div class="header">
 		<a href="'.$confUrl.'"><div class="logo"></div></a>
-		
+
 		<nav>
-		
+
 		<ul>
 			<li id="menu" class="stream-link"><a href="'.$confUrl.'/stream">Stream</a></li>
 			<li id="menu"><a href="'.$confUrl.'/profile/'.$data['user'].'">Profile</a></li>
 			<li id="menu"><a href="'.$confUrl.'/mentions">Mentions</a></li>
 			<li id="menu" class="messages-link"><a href="'.$confUrl.'/index.php?a=messages">Messages '.$msgNotification.'</a></li>
 			<li id="menu"><a href="'.$confUrl.'/pixels">Pixels</a></li>
-			<div class="search-input"><input type="text" id="search" value="Search for people" ></div> 
+			<div class="search-input"><input type="text" id="search" value="Search for people" ></div>
 			<li id="menu" class="user_dropdown-button"><img src="'.$confUrl.'/images/user_dropdown-icon.gif" />
 			<div class="user_dropdown">
-				<ul>	
+				<ul>
 					<li id="user_dropdown-list"><a href="'.$confUrl.'/settings">Profile Settings</a></li>
 					'.$plusLink.'
 					<li id="user_dropdown-list"><a href="'.$confUrl.'/passport">Passport</a></li>
-					<li id="user_dropdown-list"><a href="'.$confUrl.'/index.php?a=stream&logout=1">Logout</a></li> 
+					<li id="user_dropdown-list"><a href="'.$confUrl.'/index.php?a=stream&logout=1">Logout</a></li>
 				</ul>
 			</div>
 			</li>
 		</ul>
 		</nav>
 
-		
+
 		</div></div>';
 	} else {
-		$TMPL['userStatus'] = 'Log In / Register'; 
+		$TMPL['userStatus'] = 'Log In / Register';
 		$TMPL['topbar'] = '<div class="topbar"><div class="header"><a href="'.$confUrl.'"><div class="logo"></div><div class="logo-small"></div></a>
-			<a href="'.$confUrl.'"><div class="menu_btn nord" title="Login"><img src="'.$confUrl.'/images/register.png" /></div></a> 
-			<div class="menu_visitor">Hello <strong>Visitor</strong></div> 
-							  
-							  </div></div>';										
+			<a href="'.$confUrl.'"><div class="menu_btn nord" title="Login"><img src="'.$confUrl.'/images/register.png" /></div></a>
+			<div class="menu_visitor">Hello <strong>Visitor</strong></div>
+
+							  </div></div>';
 	}
-} else { 
+} else {
 	$TMPL['userStatus'] = 'Log In / Register';
 	$TMPL['topbar'] = '<div class="topbar"><div class="header"><a href="'.$confUrl.'"><div class="logo"></div><div class="logo-small"></div></a>
 
-		
-	
+
+
 
 	<a href="'.$confUrl.'"><div class="menu_btn nord" title="Register"><img src="'.$confUrl.'/images/register.png" /></div></a>
 								  <div class="menu_visitor">Hello <strong>Visitor</strong></div>
-							  
+
 							  </div></div>';
-							 							 
+
 }
 $query = sprintf("SELECT * FROM users WHERE username = '%s'",
 						mysql_real_escape_string($_COOKIE['username']));
 		$result = mysql_fetch_row(mysql_query($query));
 
 $TMPL['suspended'] = (!empty($result[19])) ? '<div class="notification-box notification-box-suspended">
-							<p>Your account has been suspended. For more infomation, please visit the 
-							<a href="/suspendedaccount">Suspended Account</a> page.</p> 
-							</div>' : ''; 
-							
+							<p>Your account has been suspended. For more infomation, please visit the
+							<a href="/suspendedaccount">Suspended Account</a> page.</p>
+							</div>' : '';
+
 if ($result[27] == 1) {
-	$TMPL['disabled'] = '<div class="notification-box notification-box-disabled"> 
-		<p>Your account is disabled. Fill in your account infomation and press "Reactivate"  
-		to activate your account</p> 
+	$TMPL['disabled'] = '<div class="notification-box notification-box-disabled">
+		<p>Your account is disabled. Fill in your account infomation and press "Reactivate"
+		to activate your account</p>
 		</div>';
-} 
+}
 
 // GET MESSGAGES
-	
+
 // STREAM MESSAGES
 if($_GET['m'] == 're') {
-	$TMPL['message'] = '<div class="notification-bar notification-success">Your account has been reactivated.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-success">Your account has been reactivated.</div>';
 }
 
 if($_GET['m'] == 'ms') {
-	$TMPL['message'] = '<div class="notification-bar notification-success">Your post was successfully deleted.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-success">Your post was successfully deleted.</div>';
 }
 
 if($_GET['m'] == 'me') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">We couldn\'t delete the message you\'ve selected.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">We couldn\'t delete the message you\'ve selected.</div>';
 }
 
-// PRIVATE MESSAGES 
+// PRIVATE MESSAGES
 
 
-	
-// GENERAL SETTINGS MESSAGES		
+
+// GENERAL SETTINGS MESSAGES
 if($_GET['m'] == 's') {
-	$TMPL['message'] = '<div class="notification-bar notification-success">Settings successfully saved.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-success">Settings successfully saved.</div>';
 }
 
 if($_GET['m'] == 'b') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">The Bio description can only be 260 characters or less.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">The Bio description can only be 260 characters or less.</div>';
 }
 
 if($_GET['m'] == 'ne') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">The email field cannot be empty.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">The email field cannot be empty.</div>';
 }
 
 if($_GET['m'] == 'e') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter a valid email.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter a valid email.</div>';
 }
 
 if($_GET['m'] == 'w') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter a valid URL format.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter a valid URL format.</div>';
 }
 
 // DELETE/DISABLE SETTINGS MESSAGES
 
 if($_GET['m'] == 'eb') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter both fields.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter both fields.</div>';
 }
 
 if($_GET['m'] == 'iv') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">Invalid username or password.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">Invalid username or password.</div>';
 }
 
 if($_GET['m'] == 'sd') {
-	$TMPL['message'] = '<div class="notification-bar notification-success">Your account is now disabled.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-success">Your account is now disabled.</div>';
 }
 
 // PROFILE PICTURE SETTINGS MESSAGES
 if($_GET['m'] == 'sp') {
-	$TMPL['message'] = '<div class="notification-bar notification-success">Your profile picture have been changed.</div>';  
+	$TMPL['message'] = '<div class="notification-bar notification-success">Your profile picture have been changed.</div>';
 }
 
 if($_GET['m'] == 'nf') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">You did not selected any files to be uploaded, or the selected file(s) are empty.</div>'; 
+	$TMPL['message'] = '<div class="notification-bar notification-error">You did not selected any files to be uploaded, or the selected file(s) are empty.</div>';
 }
 
 if($_GET['m'] == 'fs') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">The selected file size must not exceed 2 MB.</div>';  
+	$TMPL['message'] = '<div class="notification-bar notification-error">The selected file size must not exceed 2 MB.</div>';
 }
 
 if($_GET['m'] == 'wf') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">The selected file format is not supported. Upload a jpg, png, or gif file format.</div>';  
+	$TMPL['message'] = '<div class="notification-bar notification-error">The selected file format is not supported. Upload a jpg, png, or gif file format.</div>';
 }
 
 if($_GET['m'] == 'de') {
-	$TMPL['message'] = '<div class="notification-bar notification-success">Your profile picture has been removed.</div>';  
+	$TMPL['message'] = '<div class="notification-bar notification-success">Your profile picture has been removed.</div>';
 }
 
-// CHANGE USERNAME 
+// CHANGE USERNAME
 if($_GET['m'] == 'su') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter a username other than your current one.</div>';  
+	$TMPL['message'] = '<div class="notification-bar notification-error">Please enter a username other than your current one.</div>';
 }
 
 if($_GET['m'] == 'wp') {
-	$TMPL['message'] = '<div class="notification-bar notification-error">Incorrect password.</div>';  
+	$TMPL['message'] = '<div class="notification-bar notification-error">Incorrect password.</div>';
 }
 
 // PLUS
