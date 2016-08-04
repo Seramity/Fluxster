@@ -1,6 +1,6 @@
 # Fluxster
 
-Fluxster was a small social networking website where people can join, share, and follow other people. (Similar to Twitter)
+Fluxster is a small social networking website where people can join, share, and follow other people. (Similar to Twitter)
 People or businesses were able to use Fluxster to share content, follow users, and have their friends/customers keep up to date.
 
 Anyone may clone this repo and test Fluxster out on their own.
